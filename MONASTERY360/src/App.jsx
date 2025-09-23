@@ -14,7 +14,7 @@ import "./i18n/config";
 const Home = lazy(() => import("./pages/Home"));
 const MonasteryDiscovery = lazy(() => import("./pages/MonasteryDiscovery"));
 const MonasteryDetails = lazy(() => import("./pages/MonasteryDetails"));
-const VirtualTour = lazy(() => import("./pages/VirtualTour"));
+// const VirtualTour = lazy(() => import("./pages/VirtualTour"));
 const InteractiveMap = lazy(() => import("./pages/InteractiveMap"));
 const DigitalArchives = lazy(() => import("./pages/DigitalArchives"));
 const CulturalCalendar = lazy(() => import("./pages/CulturalCalendar"));
@@ -25,6 +25,8 @@ const NearbyAttractions = lazy(() => import("./pages/NearbyAttractions"));
 const UserProfile = lazy(() => import("./pages/UserProfile"));
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
+const VirtualTour = lazy(() => import("./pages/VirtualTour"));
+
 
 function App() {
   const { theme, setTheme } = useThemeStore();
@@ -81,7 +83,7 @@ function App() {
                       path="/monastery/:id"
                       element={<MonasteryDetails />}
                     />
-                    <Route path="/virtual-tour/:id" element={<VirtualTour />} />
+                    {/* <Route path="/virtual-tour/:id" element={<VirtualTour />} /> */}
                     <Route path="/map" element={<InteractiveMap />} />
                     <Route path="/archives" element={<DigitalArchives />} />
                     <Route path="/calendar" element={<CulturalCalendar />} />
@@ -95,7 +97,7 @@ function App() {
                     <Route path="/profile" element={<UserProfile />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/home" element={<Home />} />
-                    
+                    <Route path="/virtual-tour/:id" element={<VirtualTour />} />
                   </Routes>
                 </Suspense>
               </motion.main>

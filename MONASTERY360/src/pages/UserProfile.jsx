@@ -9,14 +9,14 @@ function UserProfile() {
   const [activeTab, setActiveTab] = useState('profile');
 
   const user = {
-    name: 'John Doe',
-    email: 'john.doe@email.com',
-    phone: '+91 98765 43210',
+    name: 'Thandup Sherpa',
+    email: 'thandupsherpa153@gmail.com',
+    phone: '+91 1234567890',
     location: 'Gangtok, Sikkim',
     joinDate: 'January 2024',
-    visitedMonasteries: 12,
-    savedPlaces: 8,
-    upcomingBookings: 2
+    visitedMonasteries: 0,
+    savedPlaces: 0,
+    upcomingBookings: 0
   };
 
   const tabs = [
