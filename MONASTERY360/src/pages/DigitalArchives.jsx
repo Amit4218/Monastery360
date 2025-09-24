@@ -134,8 +134,7 @@ function DigitalArchives() {
       category: "videos",
       monastery: "Rumtek Monastery",
       date: "2023",
-      description:
-        "A short video recording of Gharwang Rinpoche's motivation.",
+      description: "A short video recording of Gharwang Rinpoche's motivation.",
       videoUrl:
         "/vids/Gharwang Rinpoche - the importance of understanding our motivation. [Ux9uIFxtmfk].webm",
       downloadable: true,
@@ -227,6 +226,36 @@ function DigitalArchives() {
       fileSize: "5 MB",
       language: "English",
     },
+    {
+      id: 12,
+      title: "Monastery Chant - Morning Prayers",
+      type: "audio",
+      category: "audio",
+      monastery: "Lingdum Monastery",
+      date: "2023",
+      description:
+        "Traditional morning chants performed by the monks of Lingdum Monastery.",
+      audioUrl:
+        "/aud/Tibetan horn played at Losar Tibetan New Year celebrations [RmWVR4NJBrk].mp3", // place the audio in public/audio/
+      downloadable: true,
+      duration: "3:45",
+      fileSize: "5 MB",
+    },
+    {
+      id: 13,
+      title: "Monastery Chant - Morning Prayers",
+      type: "audio",
+      category: "audio",
+      monastery: "Lingdum Monastery",
+      date: "2023",
+      description:
+        "Traditional morning chants performed by the monks of Lingdum Monastery.",
+      audioUrl:
+        "/aud/Tibetan monks play traditional instruments at Dilli Haat [kkpKwEjvuxw].mp3", // place the audio in public/audio/
+      downloadable: true,
+      duration: "3:45",
+      fileSize: "5 MB",
+    },
   ];
 
   const categories = [
@@ -306,7 +335,7 @@ function DigitalArchives() {
     }
 
     const link = document.createElement("a");
-    link.href = item.image || item.videoUrl || item.fileUrl;
+    link.href = item.image || item.videoUrl || item.fileUrl || audioUrl;
     link.download = `${item.title}`;
     link.click();
 
@@ -521,6 +550,8 @@ function DigitalArchives() {
                   controls={false}
                   muted
                 />
+              ) : item.type === "audio" ? (
+                <audio src={item.audioUrl} controls className="w-full mt-4" />
               ) : item.type === "document" ? (
                 <iframe
                   src={item.fileUrl}
