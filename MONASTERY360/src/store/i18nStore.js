@@ -40,12 +40,12 @@ export const useI18nStore = create(
           nativeName: 'བོད་སྐད་',
           flag: '🏔️'
         },
-        { 
-          code: 'si', 
-          name: 'Sikkimese', 
-          nativeName: 'སུ་ཁིམ་སྐད་',
-          flag: '🏔️'
-        },
+        // { 
+        //   code: 'si', 
+        //   name: 'Sikkimese', 
+        //   nativeName: 'སུ་ཁིམ་སྐད་',
+        //   flag: '🏔️'
+        // },
       ],
       
       // Get current language data

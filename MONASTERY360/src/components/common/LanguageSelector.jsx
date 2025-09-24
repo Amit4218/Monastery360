@@ -101,7 +101,7 @@ function LanguageSelector({ className = '', showLabel = false }) {
                     >
                       <div className="flex-1">
                         <div className="flex items-center space-x-3">
-                          {/* Language Flag/Icon placeholder */}
+                          
                           <div className={`
                             w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold
                             ${isSelected 
