@@ -1,31 +1,45 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import SafeIcon from '../common/SafeIcon';
-import * as FiIcons from 'react-icons/fi';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import SafeIcon from "../common/SafeIcon";
+import * as FiIcons from "react-icons/fi";
 
-const { FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram, FiYoutube } = FiIcons;
+const {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiFacebook,
+  FiTwitter,
+  FiInstagram,
+  FiYoutube,
+} = FiIcons;
 
 function Footer() {
   const quickLinks = [
-    { label: 'About Sikkim', path: '/about' },
-    { label: 'Tourism Guidelines', path: '/guidelines' },
-    { label: 'Contact Us', path: '/contact' },
-    { label: 'Help & Support', path: '/support' },
+    {
+      label: "About Sikkim",
+      path: "https://sikkimtourism.gov.in/Public/ExperienceSikkim/History",
+    },
+    {
+      label: "Tourism Guidelines",
+      path: "https://sikkimtourism.gov.in/Public/Navigation/Planning",
+    },
+    { label: "Contact Us", path: "#" },
+    { label: "Help & Support", path: "#" },
   ];
 
   const services = [
-    { label: 'Virtual Tours', path: '/virtual-tour/1' }, // Fixed path
-    { label: 'Audio Guides', path: '/audio-guide' },
-    { label: 'Tour Booking', path: '/booking' },
-    { label: 'Homestays', path: '/homestays' },
+    { label: "Virtual Tours", path: "/virtual-tour/1" }, // Fixed path
+    // { label: "Audio Guides", path: "/audio-guide" },
+    { label: "Tour Booking", path: "/booking" },
+    { label: "Homestays", path: "/homestays" },
   ];
 
   const socialLinks = [
-    { icon: FiFacebook, url: '#', label: 'Facebook' },
-    { icon: FiTwitter, url: '#', label: 'Twitter' },
-    { icon: FiInstagram, url: '#', label: 'Instagram' },
-    { icon: FiYoutube, url: '#', label: 'YouTube' },
+    { icon: FiFacebook, url: "#", label: "Facebook" },
+    { icon: FiTwitter, url: "#", label: "Twitter" },
+    { icon: FiInstagram, url: "#", label: "Instagram" },
+    { icon: FiYoutube, url: "#", label: "YouTube" },
   ];
 
   return (
@@ -41,8 +55,9 @@ function Footer() {
               <span className="text-xl font-bold">Monastery360</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Preserving and showcasing Sikkim's rich monastic heritage through digital innovation. 
-              Discover 200+ monasteries with immersive virtual experiences.
+              Preserving and showcasing Sikkim's rich monastic heritage through
+              digital innovation. Discover 200+ monasteries with immersive
+              virtual experiences.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -99,18 +114,29 @@ function Footer() {
             <h3 className="text-lg font-semibold">Contact</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <SafeIcon icon={FiMapPin} className="w-4 h-4 text-monastery-400" />
+                <SafeIcon
+                  icon={FiMapPin}
+                  className="w-4 h-4 text-monastery-400"
+                />
                 <span className="text-gray-400 text-sm">
                   Tourism Department, Gangtok, Sikkim
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <SafeIcon icon={FiPhone} className="w-4 h-4 text-monastery-400" />
+                <SafeIcon
+                  icon={FiPhone}
+                  className="w-4 h-4 text-monastery-400"
+                />
                 <span className="text-gray-400 text-sm">+91-3592-202688</span>
               </div>
               <div className="flex items-center space-x-3">
-                <SafeIcon icon={FiMail} className="w-4 h-4 text-monastery-400" />
-                <span className="text-gray-400 text-sm">info@monastery360.sikkim.gov.in</span>
+                <SafeIcon
+                  icon={FiMail}
+                  className="w-4 h-4 text-monastery-400"
+                />
+                <span className="text-gray-400 text-sm">
+                  info@monastery360.sikkim.gov.in
+                </span>
               </div>
             </div>
           </div>
@@ -118,24 +144,22 @@ function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © 2024 Monastery360. Developed in partnership with Sikkim Tourism Department.
-          </p>
+          <p className="text-gray-400 text-sm">© 2024 Monastery360.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
-              to="/privacy"
+              to="#"
               className="text-gray-400 hover:text-monastery-400 transition-colors duration-200 text-sm"
             >
               Privacy Policy
             </Link>
             <Link
-              to="/terms"
+              to="#"
               className="text-gray-400 hover:text-monastery-400 transition-colors duration-200 text-sm"
             >
               Terms of Service
             </Link>
             <Link
-              to="/accessibility"
+              to="#"
               className="text-gray-400 hover:text-monastery-400 transition-colors duration-200 text-sm"
             >
               Accessibility
