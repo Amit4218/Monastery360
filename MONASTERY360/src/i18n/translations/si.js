@@ -1,5 +1,5 @@
 export const si = {
-  // Navigation
+
   navigation: {
     home: 'ཁྱིམ་ངོས།',
     discover: 'རྙེད་པ།',
@@ -13,7 +13,7 @@ export const si = {
     logout: 'ཕྱིར་ཐོན།'
   },
 
-  // Common terms
+ 
   common: {
     loading: 'སྣོན་འཇུག་བྱེད་བཞིན་པ།',
     error: 'ནོར་འཁྲུལ་བྱུང་བ།',
@@ -29,7 +29,7 @@ export const si = {
     difficulty: 'དཀའ་ལས།'
   },
 
-  // Monastery related terms
+  
   monastery: {
     tradition: 'ལུགས་སྲོལ།',
     established: 'གཞི་འདེགས།',
