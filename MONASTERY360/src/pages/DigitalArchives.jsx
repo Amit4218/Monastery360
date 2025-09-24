@@ -335,7 +335,7 @@ function DigitalArchives() {
     }
 
     const link = document.createElement("a");
-    link.href = item.image || item.videoUrl || item.fileUrl || audioUrl;
+    link.href = item.image || item.videoUrl || item.fileUrl || item.audioUrl;
     link.download = `${item.title}`;
     link.click();
 
