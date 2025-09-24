@@ -1,15 +1,15 @@
 import express from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import User from "../models/user.model";
+import User from "../models/user.model.js";
 
 const router = express.Router();
 
-router.post("/login", async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, phone, location } = req.body;
 
-    if (!email || !password) {
+    if (!email || !password || !phone || !location) {
       return res.status(400).json({ message: "All fields must be filled" });
     }
 
@@ -30,6 +30,8 @@ router.post("/login", async (req, res) => {
       user: {
         id: newUser._id,
         email: newUser.email,
+        phone: newUser.phone,
+        location: newUser.location,
       },
     });
   } catch (error) {
@@ -39,11 +41,11 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/register", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
-    const { email, password, phone, location } = req.body;
+    const { email, password } = req.body;
 
-    if (!email || !password || !phone || !location) {
+    if (!email || !password) {
       return res.status(400).json({ message: "All fields must be filled" });
     }
 
@@ -69,8 +71,10 @@ router.post("/register", async (req, res) => {
       message: "User logged in",
       token, // Send token to frontend to be stored in localStorage or cookies
       user: {
-        id: user._id,
-        email: user.email,
+        id: newUser._id,
+        email: newUser.email,
+        phone: newUser.phone,
+        location: newUser.location,
       },
     });
   } catch (error) {
@@ -79,3 +83,5 @@ router.post("/register", async (req, res) => {
     });
   }
 });
+
+export default router
