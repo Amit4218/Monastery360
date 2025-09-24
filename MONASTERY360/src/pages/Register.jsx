@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import SafeIcon from "../components/common/SafeIcon";
 import * as FiIcons from "react-icons/fi";
 import { useUser } from "../context/userContext";
+import { register } from "../api/auth";
 
 const {
   FiMail,
@@ -54,11 +55,17 @@ function Register() {
       setCurrentStep(currentStep + 1);
     } else {
       setIsLoading(true);
-      setTimeout(() => {
+      setTimeout(async () => {
         setIsLoading(false);
-        setUser(formData);
-        navigate("/home");
-      }, 2000);
+        const user = await register(
+          formData.email,
+          formData.password,
+          formData.phone,
+          formData.location
+        );
+        setUser(user);
+        navigate("/login");
+      }, 1000);
     }
   };
 

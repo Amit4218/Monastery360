@@ -18,7 +18,7 @@ const tourSchema = mongoose.Schema({
     default: new Date(),
   },
   guest: {
-    type: String,
+    type: String || Number,
     required: true,
   },
   cab: {
@@ -46,7 +46,7 @@ const tourSchema = mongoose.Schema({
     default: "",
   },
   totalPrice: {
-    type: String,
+    type: String || Number,
     required: true,
   },
 });
