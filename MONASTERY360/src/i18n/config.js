@@ -7,14 +7,14 @@ import { en } from './translations/en';
 import { hi } from './translations/hi';
 import { ne } from './translations/ne';
 import { bo } from './translations/bo';
-import { si } from './translations/si';
+
 
 const resources = {
   en: { translation: en },
   hi: { translation: hi },
   ne: { translation: ne },
-  bo: { translation: bo },
-  si: { translation: si }
+  bo: { translation: bo }
+  
 };
 
 // Language detection options
