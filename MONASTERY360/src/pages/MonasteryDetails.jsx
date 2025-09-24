@@ -83,7 +83,6 @@ function MonasteryDetails() {
     reviews: 324,
     hasVirtualTour: true,
     hasAudioGuide: true,
-    accessibility: "Easy",
     description:
       "Lingdum Monastery, also called the Dharmachakra Centre, is a gompa located in the Indian state of Sikkim near the capital Gangtok. It is the largest monastery in Sikkim and is the main seat of the Karmapa.",
     history:
@@ -235,7 +234,7 @@ function MonasteryDetails() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Quick Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
             <SafeIcon
               icon={FiStar}
@@ -261,7 +260,7 @@ function MonasteryDetails() {
               Altitude
             </div>
           </div>
-
+{/* 
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
             <SafeIcon
               icon={FiClock}
@@ -273,7 +272,7 @@ function MonasteryDetails() {
             <div className="text-sm text-gray-600 dark:text-gray-400">
               Accessibility
             </div>
-          </div>
+          </div> */}
 
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
             <SafeIcon
