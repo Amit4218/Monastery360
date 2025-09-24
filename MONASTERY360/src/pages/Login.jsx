@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import SafeIcon from "../components/common/SafeIcon";
 import * as FiIcons from "react-icons/fi";
 import { useUser } from "../context/userContext";
+import { login } from "../api/auth";
 
 const { FiMail, FiLock, FiEye, FiEyeOff, FiUser, FiArrowRight } = FiIcons;
 
@@ -25,11 +26,12 @@ function Login() {
     setIsLoading(true);
 
     // Simulate authentication
-    setTimeout(() => {
+    setTimeout(async () => {
       setIsLoading(false);
-      setUser(formData);
+      const user = await login(formData.email, formData.password);
+      setUser(user);
       navigate("/");
-    }, 2000);
+    }, 1000);
   };
 
   const handleChange = (e) => {

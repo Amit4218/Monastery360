@@ -4,6 +4,7 @@ import SafeIcon from "../components/common/SafeIcon";
 import * as FiIcons from "react-icons/fi";
 import { useUser } from "../context/userContext";
 import checkUser from "../hooks/checkUser";
+import { getData } from "../api/user";
 
 const {
   FiUser,
@@ -20,6 +21,14 @@ const {
 
 function UserProfile() {
   checkUser();
+
+  useEffect(() => {
+    const data = async () => {
+      await getData(); // stores homeStayBookings and tourBookings in the local s
+    };
+    data();
+  }, []);
+
   const [activeTab, setActiveTab] = useState("profile");
   const [bio, setBio] = useState("");
   const { User, setUser } = useUser();
@@ -47,9 +56,8 @@ function UserProfile() {
 
   useEffect(() => {
     try {
-      const storedBookings = JSON.parse(
-        localStorage.getItem("bookings") || "[]"
-      );
+      const storedBookings =
+        JSON.parse(localStorage.getItem("bookings")) || "[]";
       setBookings(storedBookings);
     } catch (error) {
       console.error("Error loading bookings:", error);

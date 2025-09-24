@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SafeIcon from "../components/common/SafeIcon";
 import * as FiIcons from "react-icons/fi";
 import checkUser from "../hooks/checkUser";
+import { postTour } from "../api/user";
 
 function TourBooking() {
   checkUser();
@@ -15,7 +16,7 @@ function TourBooking() {
     cab: null,
     guide: null,
     date: "",
-    guests: 1,
+    guest: 1,
     personalInfo: {
       name: "",
       email: "",
@@ -151,16 +152,16 @@ function TourBooking() {
     if (bookingData.tour) total += bookingData.tour.price;
     if (bookingData.cab) total += bookingData.cab.basePrice;
     if (bookingData.guide) total += bookingData.guide.price;
-    return total * bookingData.guests;
+    return total * bookingData.guest;
   };
 
-  const handleBookingSubmit = () => {
+  const handleBookingSubmit = async () => {
     // Flatten booking data
     const newBooking = {
       type: "tour",
       tourName: bookingData.tour?.name,
       date: bookingData.date,
-      guests: bookingData.guests,
+      guest: bookingData.guest, // API expects `guest` (singular)
       cab: bookingData.cab
         ? `${bookingData.cab.type} (${bookingData.cab.model})`
         : null,
@@ -176,6 +177,9 @@ function TourBooking() {
     const existing = JSON.parse(localStorage.getItem("bookings")) || [];
     localStorage.setItem("bookings", JSON.stringify([...existing, newBooking]));
 
+    // ✅ Send correct payload to API
+    await postTour(newBooking);
+
     alert("Booking confirmed! You will receive a confirmation email shortly.");
 
     // Reset form
@@ -188,7 +192,7 @@ function TourBooking() {
       cab: null,
       guide: null,
       date: "",
-      guests: 1,
+      guest: 1,
       personalInfo: {
         name: "",
         email: "",
@@ -311,11 +315,11 @@ function TourBooking() {
                   <input
                     type="number"
                     min="1"
-                    value={bookingData.guests}
+                    value={bookingData.guest}
                     onChange={(e) =>
                       setBookingData((prev) => ({
                         ...prev,
-                        guests: parseInt(e.target.value),
+                        guest: parseInt(e.target.value),
                       }))
                     }
                     className="w-full border p-2 rounded"
@@ -373,7 +377,7 @@ function TourBooking() {
                   <h4 className="font-semibold mb-2">Review</h4>
                   <p>Tour: {bookingData.tour?.name}</p>
                   <p>Date: {bookingData.date}</p>
-                  <p>Guests: {bookingData.guests}</p>
+                  <p>Guests: {bookingData.guest}</p>
                   <p>Cab: {bookingData.cab?.type}</p>
                   <p>Guide: {bookingData.guide?.name}</p>
                   <p>Total: ₹{calculateTotalPrice()}</p>
