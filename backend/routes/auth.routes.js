@@ -23,6 +23,8 @@ router.post("/register", async (req, res) => {
     const newUser = await User.create({
       email,
       password: hashedPassword,
+      phone,
+      location,
     });
 
     res.status(201).json({
@@ -71,10 +73,10 @@ router.post("/login", async (req, res) => {
       message: "User logged in",
       token, // Send token to frontend to be stored in localStorage or cookies
       user: {
-        id: newUser._id,
-        email: newUser.email,
-        phone: newUser.phone,
-        location: newUser.location,
+        id: user._id,
+        email: user.email,
+        phone: user.phone,
+        location: user.location,
       },
     });
   } catch (error) {
@@ -84,4 +86,4 @@ router.post("/login", async (req, res) => {
   }
 });
 
-export default router
+export default router;
