@@ -27,7 +27,6 @@ const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
 const VirtualTour = lazy(() => import("./pages/VirtualTour"));
 
-
 function App() {
   const { theme, setTheme } = useThemeStore();
   const { language } = useI18nStore();
@@ -77,7 +76,7 @@ function App() {
                   }
                 >
                   <Routes>
-                    <Route path="/" element={<Register />} />
+                    <Route path="/register" element={<Register />} />
                     <Route path="/discover" element={<MonasteryDiscovery />} />
                     <Route
                       path="/monastery/:id"
@@ -96,7 +95,7 @@ function App() {
                     />
                     <Route path="/profile" element={<UserProfile />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/home" element={<Home />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/virtual-tour/:id" element={<VirtualTour />} />
                   </Routes>
                 </Suspense>

@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { useTranslation } from '../hooks/useTranslation';
-import SafeIcon from '../components/common/SafeIcon';
-import * as FiIcons from 'react-icons/fi';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useTranslation } from "../hooks/useTranslation";
+import SafeIcon from "../components/common/SafeIcon";
+import * as FiIcons from "react-icons/fi";
 
-const { FiPlay, FiMap, FiArchive, FiCalendar, FiCompass, FiStar, FiUsers, FiAward } = FiIcons;
+const {
+  FiPlay,
+  FiMap,
+  FiArchive,
+  FiCalendar,
+  FiCompass,
+  FiStar,
+} = FiIcons;
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,81 +21,86 @@ function Home() {
 
   const heroSlides = [
     {
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop',
-      title: t('home.heroTitle1'),
-      subtitle: t('home.heroSubtitle1'),
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop",
+      title: t("home.heroTitle1"),
+      subtitle: t("home.heroSubtitle1"),
     },
     {
-      image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1920&h=1080&fit=crop',
-      title: t('home.heroTitle2'),
-      subtitle: t('home.heroSubtitle2'),
+      image:
+        "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1920&h=1080&fit=crop",
+      title: t("home.heroTitle2"),
+      subtitle: t("home.heroSubtitle2"),
     },
     {
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&h=1080&fit=crop',
-      title: t('home.heroTitle3'),
-      subtitle: t('home.heroSubtitle3'),
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&h=1080&fit=crop",
+      title: t("home.heroTitle3"),
+      subtitle: t("home.heroSubtitle3"),
     },
   ];
 
   const features = [
     {
       icon: FiPlay,
-      title: t('home.virtualToursFeature'),
-      description: t('home.virtualToursDesc'),
-      link: '/virtual-tour/1',
+      title: t("home.virtualToursFeature"),
+      description: t("home.virtualToursDesc"),
+      link: "/virtual-tour/1",
     },
     {
       icon: FiMap,
-      title: t('home.interactiveMapsFeature'),
-      description: t('home.interactiveMapsDesc'),
-      link: '/map',
+      title: t("home.interactiveMapsFeature"),
+      description: t("home.interactiveMapsDesc"),
+      link: "/map",
     },
     {
       icon: FiArchive,
-      title: t('home.digitalArchivesFeature'),
-      description: t('home.digitalArchivesDesc'),
-      link: '/archives',
+      title: t("home.digitalArchivesFeature"),
+      description: t("home.digitalArchivesDesc"),
+      link: "/archives",
     },
     {
       icon: FiCalendar,
-      title: t('home.culturalCalendarFeature'),
-      description: t('home.culturalCalendarDesc'),
-      link: '/calendar',
+      title: t("home.culturalCalendarFeature"),
+      description: t("home.culturalCalendarDesc"),
+      link: "/calendar",
     },
   ];
 
   const stats = [
-    { number: '200+', label: t('home.monasteries'), icon: FiCompass },
-    { number: '50+', label: t('common.virtualTour'), icon: FiPlay },
-    { number: '1000+', label: t('home.artifacts'), icon: FiArchive },
-    { number: '25+', label: t('monastery.festivals'), icon: FiStar },
+    { number: "200+", label: t("home.monasteries"), icon: FiCompass },
+    { number: "50+", label: t("common.virtualTour"), icon: FiPlay },
+    { number: "1000+", label: t("home.artifacts"), icon: FiArchive },
+    { number: "25+", label: t("monastery.festivals"), icon: FiStar },
   ];
 
   const featuredMonasteries = [
     {
       id: 1,
-      name: 'Rumtek Monastery',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-      tradition: 'Kagyu',
-      distance: '24 km from Gangtok',
+      name: "Lingdum Monastery",
+      image:
+        "https://scontent-bom2-4.xx.fbcdn.net/v/t39.30808-6/473643140_593361926883121_2142552495858515871_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=rYagUHd0Z28Q7kNvwFiTreu&_nc_oc=AdmqP0ycAHK0H54anBGz3bSZWSQFBOnAWc1FsQKq6_N8WNxWZ3DNoB14f4kZ9lkc54bNU3sMmyuHL9YgVonxzkD-&_nc_zt=23&_nc_ht=scontent-bom2-4.xx&_nc_gid=uSIPQDAbs2GWhWLCOQ7kiw&oh=00_Afb6UuAviuYL3VxPdfaZ6kKqclO9cko14R41nWIHrDUPbQ&oe=68D8D285",
+      tradition: "Kagyu",
+      distance: "24 km from Gangtok",
       rating: 4.8,
       hasVirtualTour: true,
     },
     {
       id: 2,
-      name: 'Enchey Monastery',
-      image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=300&fit=crop',
-      tradition: 'Nyingma',
-      distance: '3 km from Gangtok',
+      name: "Enchey Monastery",
+      image: "https://live.staticflickr.com/389/19359749150_3d4facbc6d_b.jpg",
+      tradition: "Nyingma",
+      distance: "3 km from Gangtok",
       rating: 4.6,
-      hasVirtualTour: true,
+      hasVirtualTour: false,
     },
     {
       id: 3,
-      name: 'Pemayangtse Monastery',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
-      tradition: 'Nyingma',
-      distance: '110 km from Gangtok',
+      name: "Pemayangtse Monastery",
+      image:
+        "https://res.cloudinary.com/kmadmin/image/upload/v1726815209/kiomoi/Pemayangtse_Monastery_5141.jpg",
+      tradition: "Nyingma",
+      distance: "110 km from Gangtok",
       rating: 4.9,
       hasVirtualTour: false,
     },
@@ -108,7 +120,9 @@ function Home() {
         {heroSlides.map((slide, index) => (
           <motion.div
             key={index}
-            className={`absolute inset-0 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute inset-0 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -141,15 +155,15 @@ function Home() {
                 className="bg-monastery-600 hover:bg-monastery-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center space-x-2"
               >
                 <SafeIcon icon={FiCompass} className="w-5 h-5" />
-                <span>{t('home.startExploring')}</span>
+                <span>{t("home.startExploring")}</span>
               </Link>
-              <Link
+              {/* <Link
                 to="/virtual-tour/1"
                 className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 flex items-center space-x-2"
               >
                 <SafeIcon icon={FiPlay} className="w-5 h-5" />
-                <span>{t('home.virtualTour')}</span>
-              </Link>
+                <span>{t("home.virtualTour")}</span>
+              </Link> */}
             </div>
           </motion.div>
         </div>
@@ -161,7 +175,7 @@ function Home() {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                index === currentSlide ? 'bg-white' : 'bg-white bg-opacity-50'
+                index === currentSlide ? "bg-white" : "bg-white bg-opacity-50"
               }`}
             />
           ))}
@@ -178,10 +192,10 @@ function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('home.digitalHeritage')}
+              {t("home.digitalHeritage")}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              {t('home.digitalHeritageDesc')}
+              {t("home.digitalHeritageDesc")}
             </p>
           </motion.div>
 
@@ -197,7 +211,10 @@ function Home() {
                 className="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl hover:shadow-lg transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-monastery-100 dark:bg-monastery-900/20 rounded-lg flex items-center justify-center mb-4">
-                  <SafeIcon icon={feature.icon} className="w-6 h-6 text-monastery-600 dark:text-monastery-400" />
+                  <SafeIcon
+                    icon={feature.icon}
+                    className="w-6 h-6 text-monastery-600 dark:text-monastery-400"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                   {feature.title}
@@ -209,7 +226,7 @@ function Home() {
                   to={feature.link}
                   className="text-monastery-600 dark:text-monastery-400 font-medium hover:underline"
                 >
-                  {t('common.learn')} →
+                  {t("common.learn")} →
                 </Link>
               </motion.div>
             ))}
@@ -251,10 +268,10 @@ function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('home.featuredMonasteries')}
+              {t("home.featuredMonasteries")}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              {t('home.featuredMonasteriesDesc')}
+              {t("home.featuredMonasteriesDesc")}
             </p>
           </motion.div>
 
@@ -277,7 +294,7 @@ function Home() {
                   />
                   {monastery.hasVirtualTour && (
                     <div className="absolute top-4 right-4 bg-monastery-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {t('common.virtualTour')}
+                      {t("common.virtualTour")}
                     </div>
                   )}
                 </div>
@@ -292,7 +309,10 @@ function Home() {
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-1">
-                      <SafeIcon icon={FiStar} className="w-4 h-4 text-yellow-400" />
+                      <SafeIcon
+                        icon={FiStar}
+                        className="w-4 h-4 text-yellow-400"
+                      />
                       <span className="text-sm font-medium text-gray-900 dark:text-white">
                         {monastery.rating}
                       </span>
@@ -301,7 +321,7 @@ function Home() {
                       to={`/monastery/${monastery.id}`}
                       className="bg-monastery-600 hover:bg-monastery-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
                     >
-                      {t('common.explore')}
+                      {t("common.explore")}
                     </Link>
                   </div>
                 </div>
@@ -314,7 +334,7 @@ function Home() {
               to="/discover"
               className="bg-monastery-600 hover:bg-monastery-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors duration-200 inline-flex items-center space-x-2"
             >
-              <span>{t('home.viewAllMonasteries')}</span>
+              <span>{t("home.viewAllMonasteries")}</span>
               <SafeIcon icon={FiCompass} className="w-5 h-5" />
             </Link>
           </div>
